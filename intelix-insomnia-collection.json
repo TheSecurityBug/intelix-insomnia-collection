@@ -1,0 +1,812 @@
+{
+  "__export_date": "2019-12-01T15:20:48.450Z",
+  "__export_format": 4,
+  "__export_source": "insomnia.desktop.app:v7.0.5",
+  "_type": "export",
+  "resources": [
+    {
+      "_id": "req_aff0a3ab20774460856ddb4fbc06ca00",
+      "_type": "request",
+      "authentication": {
+        "disabled": false,
+        "password": "",
+        "type": "basic",
+        "username": ""
+      },
+      "body": {
+        "mimeType": "application/x-www-form-urlencoded",
+        "params": [
+          {
+            "disabled": false,
+            "id": "pair_f8b0e96df0774e9d8d053215df164a8e",
+            "name": "grant_type",
+            "value": "client_credentials"
+          }
+        ]
+      },
+      "created": 1575056864587,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_ff6da4bb8a6b4d7987a3d8524e8ade72",
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864676,
+      "method": "POST",
+      "modified": 1575068555852,
+      "name": "Cognito AccessToken",
+      "parameters": [],
+      "parentId": "fld_e4a2c67930944edc997d339d74edab68",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{base_url}}/oauth2/token"
+    },
+    {
+      "_id": "fld_e4a2c67930944edc997d339d74edab68",
+      "_type": "request_group",
+      "created": 1575056866425,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1575056866425,
+      "modified": 1575056866425,
+      "name": "Intelix",
+      "parentId": "wrk_8cf4e301f5594e22baa06c6b6a95eb9a"
+    },
+    {
+      "_id": "wrk_8cf4e301f5594e22baa06c6b6a95eb9a",
+      "_type": "workspace",
+      "created": 1567599938364,
+      "description": "",
+      "modified": 1575041196908,
+      "name": "SophosLabs",
+      "parentId": null
+    },
+    {
+      "_id": "req_cf7ce9c1bf1f438780122c30dca19da3",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864597,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864597,
+      "method": "GET",
+      "modified": 1575056864597,
+      "name": "APK lookup (cert hash/package name/version/file hash)",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/apk/v1/{{cert_hash}}/{{package_name}}/{{apk_version}}/{{apk_hash}}"
+    },
+    {
+      "_id": "fld_4148969fe1054453933c81080225a7c6",
+      "_type": "request_group",
+      "created": 1575056864608,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1575056864608,
+      "modified": 1575056864608,
+      "name": "Lookup",
+      "parentId": "fld_e4a2c67930944edc997d339d74edab68"
+    },
+    {
+      "_id": "req_e106006466694f0e81f1cfccf2a4b6c2",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864598,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864598,
+      "method": "GET",
+      "modified": 1575056864598,
+      "name": "APK lookup (cert hash/package name/version)",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/apk/v1/{{cert_hash}}/{{package_name}}/{{apk_version}}"
+    },
+    {
+      "_id": "req_922d1df594804d209b095c1269c82115",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864599,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864599,
+      "method": "GET",
+      "modified": 1575056864599,
+      "name": "APK lookup (cert hash/package name)",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/apk/v1/{{cert_hash}}/{{package_name}}"
+    },
+    {
+      "_id": "req_ab2a0b360a144160997a0bb4e66d41b4",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864601,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864601,
+      "method": "GET",
+      "modified": 1575056864601,
+      "name": "APK lookup (cert hash)",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/apk/v1/{{cert_hash}}"
+    },
+    {
+      "_id": "req_8bb7380a3c9e45579da5bde087834c8a",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864603,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864603,
+      "method": "GET",
+      "modified": 1575056864603,
+      "name": "IP lookup",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/ips/v1/{{ip}}"
+    },
+    {
+      "_id": "req_9013d5ab2f3d4b5f81428e27b4050d81",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864604,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_88a2ad4929ba42faa62e3332a8df0f13",
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864604,
+      "method": "GET",
+      "modified": 1575064968570,
+      "name": "URL lookup",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/urls/v1/{{url}}"
+    },
+    {
+      "_id": "req_7a0cf6cde76e48d89a9888e3c8d08f9b",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864605,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864605,
+      "method": "GET",
+      "modified": 1575056864605,
+      "name": "File hash lookup",
+      "parameters": [],
+      "parentId": "fld_4148969fe1054453933c81080225a7c6",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/lookup/files/v1/{{sha_256}}"
+    },
+    {
+      "_id": "req_8cfcd521fdd04a77b40f00509bd5a0e6",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864609,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_3c61c326df284f3c9a7dc45f8bfec75a",
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864612.5,
+      "method": "GET",
+      "modified": 1575068484660,
+      "name": "Get By JobId (Static) - HTML report",
+      "parameters": [],
+      "parentId": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/static/v1/reports/{{job_id}}?report_format=html"
+    },
+    {
+      "_id": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "_type": "request_group",
+      "created": 1575056864615,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1575056864615,
+      "modified": 1575056864615,
+      "name": "Static",
+      "parentId": "fld_40ac777474a4435ba66bd07a1a3af7d6"
+    },
+    {
+      "_id": "fld_40ac777474a4435ba66bd07a1a3af7d6",
+      "_type": "request_group",
+      "created": 1575056864626,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1575056864626,
+      "modified": 1575056864626,
+      "name": "Analysis",
+      "parentId": "fld_e4a2c67930944edc997d339d74edab68"
+    },
+    {
+      "_id": "req_9799092e61044e6f8a0c084ae3595976",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864609,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864609,
+      "method": "GET",
+      "modified": 1575056864609,
+      "name": "Get By FileHash (Static) - HTML report",
+      "parameters": [],
+      "parentId": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/static/v1/reports?sha256={{sha_256}}&report_format=html"
+    },
+    {
+      "_id": "req_5c76bee95d184b1d8f4593b46083562e",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864612,
+      "description": "",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864612,
+      "method": "GET",
+      "modified": 1575056864612,
+      "name": "Get By FileHash (Static)",
+      "parameters": [],
+      "parentId": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/static/v1/reports?sha256={{sha_256}}"
+    },
+    {
+      "_id": "req_d72a01d1e4984b7fb516b0f83c074fd9",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864613,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_864f35935c9842739fc2aaa636428afc",
+          "name": "Authorization",
+          "value": "{{access_token}}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864613,
+      "method": "GET",
+      "modified": 1575068359562,
+      "name": "Get By JobId (Static)",
+      "parameters": [],
+      "parentId": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/static/v1/reports/{{job_id}}"
+    },
+    {
+      "_id": "req_564369b46d4d43a09a219e7405ae5cd5",
+      "_type": "request",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "id": "pair_7fac309a8e894173bd0e61e5ba0a92a4",
+            "name": "file",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "created": 1575057744383,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_623a40a5fe0a498ea77913e9774c12db",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        },
+        {
+          "description": "",
+          "id": "pair_74925233fb154a51a38d064f590a3b93",
+          "name": "Authorization",
+          "value": "{{ access_token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575057744383,
+      "method": "POST",
+      "modified": 1575064953784,
+      "name": "Static File Analysis",
+      "parameters": [],
+      "parentId": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/static/v1/"
+    },
+    {
+      "_id": "req_3ae1b38bd3624159ad54073204163541",
+      "_type": "request",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "id": "pair_392bb4badac84639880e5d833e14ae33",
+            "name": "file",
+            "type": "file",
+            "value": ""
+          },
+          {
+            "description": "",
+            "id": "pair_b0715430abd74b489fb7c18ef0aa7f53",
+            "name": "report_format",
+            "value": "html"
+          }
+        ]
+      },
+      "created": 1575065125039,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_623a40a5fe0a498ea77913e9774c12db",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        },
+        {
+          "description": "",
+          "id": "pair_74925233fb154a51a38d064f590a3b93",
+          "name": "Authorization",
+          "value": "{{ access_token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575057442089,
+      "method": "POST",
+      "modified": 1575068501271,
+      "name": "Static File Analysis - HTML report",
+      "parameters": [],
+      "parentId": "fld_d2581d0ea36946aaaeae35922b1f9208",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/static/v1/"
+    },
+    {
+      "_id": "req_7806b7ccf63c4a67886c585256196007",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864617,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_2dfc74c9a9cb4d9dabf1e4d3799971f2",
+          "name": "Authorization",
+          "value": "{{ access_token }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864617,
+      "method": "GET",
+      "modified": 1575057618096,
+      "name": "Get By FileHash (Dynamic) - HTML report",
+      "parameters": [],
+      "parentId": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/dynamic/v1/reports?sha256={{sha_256}}&report_format=html"
+    },
+    {
+      "_id": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "_type": "request_group",
+      "created": 1575056864624,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1575056864624,
+      "modified": 1575056864624,
+      "name": "Dynamic",
+      "parentId": "fld_40ac777474a4435ba66bd07a1a3af7d6"
+    },
+    {
+      "_id": "req_e4258692455b4af69defdd2d2159b449",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864618,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_dff16a90cfe042549bd01f40d6913886",
+          "name": "Authorization",
+          "value": "{{ access_token }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864621.5,
+      "method": "GET",
+      "modified": 1575063392396,
+      "name": "Get By JobId (Dynamic) - HTML report",
+      "parameters": [],
+      "parentId": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/dynamic/v1/reports/{{job_id}}?report_format=html"
+    },
+    {
+      "_id": "req_47974c0cb89d4f519883537570bb1096",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864621,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_5af4998eae604b24acc13a04f0698d40",
+          "name": "Authorization",
+          "value": "{{ access_token }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864621,
+      "method": "GET",
+      "modified": 1575059454365,
+      "name": "Get By FileHash (Dynamic)",
+      "parameters": [],
+      "parentId": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/dynamic/v1/reports?sha256={{ sha256}}"
+    },
+    {
+      "_id": "req_5bc8f943f5a64f8b9f115118befedad2",
+      "_type": "request",
+      "authentication": {},
+      "body": {},
+      "created": 1575056864622,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_e9f1058e6ce0425fa96c07083aafa445",
+          "name": "Authorization",
+          "value": "{{ access_token }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575056864622,
+      "method": "GET",
+      "modified": 1575057603996,
+      "name": "Get By JobId (Dynamic)",
+      "parameters": [],
+      "parentId": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/dynamic/v1/reports/{{job_id}}"
+    },
+    {
+      "_id": "req_e5b845f21e7447ebbbc9e2c455a8eb3f",
+      "_type": "request",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "id": "pair_044ef66cbe4d4a68b2a13e3332092a28",
+            "name": "file",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "created": 1575057139795,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_bc5f1086210d4f81be2f233fdb5df2b3",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        },
+        {
+          "description": "",
+          "id": "pair_4495003a3ae24e789d2385ed5219be79",
+          "name": "Authorization",
+          "value": "{{ access_token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575057139795,
+      "method": "POST",
+      "modified": 1575063255467,
+      "name": "Dynamic File Analysis",
+      "parameters": [],
+      "parentId": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/dynamic/v1/"
+    },
+    {
+      "_id": "req_df49f4ad25574e94b2a47ab7b806046a",
+      "_type": "request",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "id": "pair_044ef66cbe4d4a68b2a13e3332092a28",
+            "name": "file",
+            "type": "file",
+            "value": ""
+          },
+          {
+            "description": "",
+            "id": "pair_f45b57d1302f489c8c45a4ac7f500314",
+            "name": "report_format",
+            "value": "html"
+          }
+        ]
+      },
+      "created": 1575065090988,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_bc5f1086210d4f81be2f233fdb5df2b3",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        },
+        {
+          "description": "",
+          "id": "pair_4495003a3ae24e789d2385ed5219be79",
+          "name": "Authorization",
+          "value": "{{ access_token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1575057002235.5,
+      "method": "POST",
+      "modified": 1575065121260,
+      "name": "Dynamic File Analysis - HTML report",
+      "parameters": [],
+      "parentId": "fld_9cb27fc85773492ea2eb977e2c521d0e",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "https://{{region}}.{{base_url}}/analysis/file/dynamic/v1/"
+    },
+    {
+      "_id": "env_5851bb0ed813e897d298d411f572ac4f435b92e5",
+      "_type": "environment",
+      "color": null,
+      "created": 1567599938395,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1567599938395,
+      "modified": 1567599938395,
+      "name": "Base Environment",
+      "parentId": "wrk_8cf4e301f5594e22baa06c6b6a95eb9a"
+    },
+    {
+      "_id": "jar_5851bb0ed813e897d298d411f572ac4f435b92e5",
+      "_type": "cookie_jar",
+      "cookies": [],
+      "created": 1567599938397,
+      "modified": 1575068931505,
+      "name": "Default Jar",
+      "parentId": "wrk_8cf4e301f5594e22baa06c6b6a95eb9a"
+    },
+    {
+      "_id": "env_8c2a5677a4764ebbbf2235387846756a",
+      "_type": "environment",
+      "color": null,
+      "created": 1575042696892,
+      "data": {
+        "access_token": "",
+        "base_url": "api.labs.sophos.com",
+        "region": "de"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "access_token",
+          "base_url",
+          "region"
+        ]
+      },
+      "isPrivate": false,
+      "metaSortKey": 1575042696893,
+      "modified": 1575065266708,
+      "name": "Intelix - de",
+      "parentId": "env_5851bb0ed813e897d298d411f572ac4f435b92e5"
+    },
+    {
+      "_id": "env_27e17d25dd7246ae9a8d4d5dfb54a490",
+      "_type": "environment",
+      "color": null,
+      "created": 1575056889859,
+      "data": {
+        "access_token": "",
+        "base_url": "api.labs.sophos.com",
+        "region": "us"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "access_token",
+          "base_url",
+          "region"
+        ]
+      },
+      "isPrivate": false,
+      "metaSortKey": 1575056889859,
+      "modified": 1575065263539,
+      "name": "Intelix - us",
+      "parentId": "env_5851bb0ed813e897d298d411f572ac4f435b92e5"
+    }
+  ]
+}
